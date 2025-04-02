@@ -5,7 +5,7 @@ const Header = () => {
 
 
   return (
-    <header className="bg-gradient-to-r from-teal-400 to-yellow-200">
+    <header className="bg-gradient-to-r from-fuchsia-500 to-cyan-500">
   <div className="mx-auto max-w-screen-xl px-8 sm:px-6 lg:px-8">
     <div className="flex h-16 items-center justify-between">
     
