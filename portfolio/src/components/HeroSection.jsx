@@ -1,42 +1,36 @@
-import React from 'react'
+import React from 'react';
 
 const HeroSection = () => {
   return (
-    <section class="bg-gradient-to-r from-fuchsia-500 to-cyan-500 lg:grid lg:h-screen lg:place-content-center">
-  <div
-    class="mx-auto w-screen max-w-screen-xl px-4 py-16 sm:px-6 sm:py-24 md:grid md:grid-cols-2 md:items-center md:gap-4 lg:px-8 lg:py-32"
-  >
-    <div class="max-w-prose text-left">
-      <h3 className='text-xl italic text-white'>Hello !!!</h3>
-      <h1 class="text-7xl font-bold text-white capitalize pb-8">
+    <section className="bg-gradient-to-r from-fuchsia-500 to-cyan-500 h-screen flex items-center justify-center px-6">
+    <div className="max-w-3xl text-center">
+      <h3 className="text-lg italic text-black font-semibold">Hello !!!</h3>
+      <h1 className="text-4xl sm:text-5xl lg:text-8xl font-bold text-white capitalize py-4">
         I'm Prathamesh Surywanshi
       </h1>
-
-      <p className="text-xl mt-3 text-white pb-5">Front-End Developer | Shopify & Liquid  | Crafting Scalable & User-Centric Web Experiences</p>
-
-      <div class="mt-4 flex gap-4 sm:mt-6">
+  
+      <p className="text-lg sm:text-xl text-white pb-6">
+        Front-End Developer | Shopify & Liquid | Crafting Scalable & User-Centric Web Experiences
+      </p>
+  
+      <div className="flex flex-col sm:flex-row justify-center gap-4">
         <a
-          class="inline-block rounded border border-cyan-600 bg-cyan-700 text-white px-5 py-3 font-medium text-white shadow-sm transition-colors hover:bg-cyan-900"
           href="#about"
+          className="inline-block rounded border border-white bg-white text-cyan-700 px-6 py-3 font-medium transition hover:bg-transparent hover:text-white"
         >
           Get Started
         </a>
-
-        
+        <a
+          href="#projects"
+          className="inline-block rounded border border-white text-white px-6 py-3 font-medium transition hover:bg-white hover:text-cyan-700"
+        >
+          My Projects
+        </a>
       </div>
     </div>
+  </section>
+  
+  );
+};
 
-    <svg
-      xmlns="http://www.w3.org/2000/svg"
-      viewBox="0 0 1024 768"
-      class="mx-auto hidden max-w-md text-gray-900 md:block"
-    >
-      
-
-    </svg>
-  </div>
-</section>
-  )
-}
-
-export default HeroSection
+export default HeroSection;

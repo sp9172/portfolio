@@ -1,76 +1,82 @@
-import { useState, useEffect } from "react";
-import { Moon, Sun, Menu, X } from "lucide-react";
+import { useState } from "react";
+import { Menu, X } from "lucide-react";
 
 const Header = () => {
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
+  const toggleMobileMenu = () => {
+    setMobileMenuOpen(!mobileMenuOpen);
+  };
 
   return (
-    <header className="bg-gradient-to-r from-fuchsia-500 to-cyan-500">
-  <div className="mx-auto max-w-screen-xl px-8 sm:px-6 lg:px-8">
-    <div className="flex h-16 items-center justify-between">
-    
+    <header className="bg-gradient-to-r from-fuchsia-500 to-cyan-500 shadow-md">
+      <div className="mx-auto max-w-screen-xl px-4 sm:px-6 lg:px-8">
+        <div className="flex h-16 items-center justify-between">
+          
+          {/* Logo or Title */}
+          <div className="text-white text-xl font-bold">My Portfolio</div>
 
-      <div className="hidden md:block">
-        <nav aria-label="Global">
-          <ul className="flex items-center gap-6 text-lg uppercase">
-          <li>
-              <a className="text-black-500 transition hover:text-white-500/75" href="#"> Home</a>
-            </li>
-            <li>
-              <a className="text-black-500 transition hover:text-black-500/75" href="#"> About Me </a>
-            </li>
+          {/* Desktop Menu */}
+          <nav className="hidden md:block">
+            <ul className="flex items-center gap-6 text-lg uppercase">
+              {["Home", "About", "Education", "Experience", "Projects", "Contact"].map((item, index) => (
+                <li key={index}>
+                  <a
+                    href={`#${item.replace(/\s+/g, "").toLowerCase()}`}
+                    className="text-white transition hover:text-black"
+                  >
+                    {item}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </nav>
 
-            <li>
-              <a className="text-black-500 transition hover:text-black-500/75" href="#"> Education </a>
-            </li>
-
-            <li>
-              <a className="text-black-500 transition hover:text-black-500/75" href="#"> Experience </a>
-            </li>
-
-            <li>
-              <a className="text-black-500 transition hover:text-black-500/75" href="#"> Projects </a>
-            </li>
-
-            <li>
-              <a className="text-black-500 transition hover:text-black-500/75" href="#"> Contact </a>
-            </li>
-
-          </ul>
-        </nav>
-      </div>
-
-      <div className="flex items-center gap-4">
-        <div className="sm:flex sm:gap-4">
-          <a
-            className="rounded-md bg-teal-600 px-5 py-2.5 text-lg font-medium text-white shadow-sm"
-            href="#"
-          >
-            Download Resume
-          </a>
-
-        </div>
-
-        <div className="block md:hidden">
-          <button
-            className="rounded-sm bg-gray-100 p-2 text-gray-600 transition hover:text-gray-600/75"
-          >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              className="size-5"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-              strokeWidth="2"
+          {/* Resume Button & Mobile Menu Icon */}
+          <div className="flex items-center gap-4">
+            <a
+              className="hidden sm:inline-block rounded-md bg-teal-600 px-4 py-2 text-white font-medium hover:bg-teal-700 transition"
+              href="Prathamesh-surywanshi-front-end (1).pdf"
             >
-              <path strokeLinecap="round" strokeLinejoin="round" d="M4 6h16M4 12h16M4 18h16" />
-            </svg>
-          </button>
+              Download Resume
+            </a>
+            <button
+              onClick={toggleMobileMenu}
+              className="md:hidden text-white p-2 focus:outline-none"
+            >
+              {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+            </button>
+          </div>
         </div>
+
+        {/* Mobile Menu */}
+        {mobileMenuOpen && (
+          <nav className="md:hidden mt-2">
+            <ul className="flex flex-col gap-4 text-black text-lg uppercase">
+              {["Home", "About", "Education", "Experience", "Projects", "Contact"].map((item, index) => (
+                <li key={index}>
+                  <a
+                    href={`#${item.replace(/\s+/g, "").toLowerCase()}`}
+                    className="block py-1 border-b border-white/30"
+                    onClick={() => setMobileMenuOpen(false)} // Close menu on click
+                  >
+                    {item}
+                  </a>
+                </li>
+              ))}
+              <li>
+                <a
+                  className="block rounded-md bg-teal-600 px-4 py-2 text-center text-white font-medium hover:bg-teal-700 transition"
+                  href="Prathamesh-surywanshi-front-end (1).pdf"
+                >
+                  Download Resume
+                </a>
+              </li>
+            </ul>
+          </nav>
+        )}
       </div>
-    </div>
-  </div>
-</header>
+    </header>
   );
 };
 

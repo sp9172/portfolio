@@ -1,20 +1,52 @@
-import React from 'react'
+import React from 'react';
+import { Mail, MapPin, Phone } from 'lucide-react';
 
 const Contact = () => {
   return (
-    <section id="contact" className="w-full py-16 bg-white dark:bg-gray-800 text-gray-900 dark:text-white text-center">
-      <div className="container mx-auto max-w-4xl p-6">
-        <h2 className="text-4xl font-bold mb-4 text-blue-600 dark:text-blue-400">Contact Me</h2>
-        <p className="text-lg leading-relaxed mb-6 text-gray-700 dark:text-gray-300">Feel free to reach out for collaborations or just a friendly chat.</p>
-        <form className="space-y-4">
-          <input type="text" placeholder="Your Name" className="w-full p-3 rounded-lg border border-gray-300 dark:border-gray-600 focus:outline-none focus:ring-2 focus:ring-blue-500" />
-          <input type="email" placeholder="Your Email" className="w-full p-3 rounded-lg border border-gray-300 dark:border-gray-600 focus:outline-none focus:ring-2 focus:ring-blue-500" />
-          <textarea placeholder="Your Message" rows="5" className="w-full p-3 rounded-lg border border-gray-300 dark:border-gray-600 focus:outline-none focus:ring-2 focus:ring-blue-500"></textarea>
-          <button type="submit" className="w-full bg-blue-600 text-white py-3 rounded-lg hover:bg-blue-700 transition duration-300">Send Message</button>
-        </form>
+    <section
+      id="contact"
+      className="w-full bg-gradient-to-br from-fuchsia-600 via-cyan-500 to-blue-500 py-20 px-6 text-black"
+    >
+      <div className="max-w-6xl mx-auto">
+        <h2 className="text-4xl sm:text-5xl md:text-6xl font-bold underline decoration-white underline-offset-8 mb-12">
+          Contact Me
+        </h2>
+        <p className="text-lg sm:text-xl leading-relaxed mb-12 text-white/90">
+          Feel free to reach out for collaborations or just a friendly chat.
+        </p>
+
+        {/* Contact Info Cards */}
+        <div className="flex flex-col md:flex-row md:justify-between gap-8">
+          {/* Phone */}
+          <div className="relative border-l-4 border-white pl-8 group hover:scale-[1.01] transition-all duration-300 text-left">
+            <div className="absolute -left-4 top-0 w-8 h-8 rounded-full bg-white text-fuchsia-700 flex items-center justify-center shadow-md">
+              <Phone className="w-4 h-4" />
+            </div>
+            <h3 className="text-xl font-semibold">Phone</h3>
+            <p className="text-white/80 mt-1">+91 9876543210</p>
+          </div>
+
+          {/* Email */}
+          <div className="relative border-l-4 border-white pl-8 group hover:scale-[1.01] transition-all duration-300 text-left">
+            <div className="absolute -left-4 top-0 w-8 h-8 rounded-full bg-white text-fuchsia-700 flex items-center justify-center shadow-md">
+              <Mail className="w-4 h-4" />
+            </div>
+            <h3 className="text-xl font-semibold">Email</h3>
+            <p className="text-white/80 mt-1">yourmail@example.com</p>
+          </div>
+
+          {/* Location */}
+          <div className="relative border-l-4 border-white pl-8 group hover:scale-[1.01] transition-all duration-300 text-left">
+            <div className="absolute -left-4 top-0 w-8 h-8 rounded-full bg-white text-fuchsia-700 flex items-center justify-center shadow-md">
+              <MapPin className="w-4 h-4" />
+            </div>
+            <h3 className="text-xl font-semibold">Location</h3>
+            <p className="text-white/80 mt-1">Kolhapur, Maharashtra</p>
+          </div>
+        </div>
       </div>
     </section>
-  )
-}
+  );
+};
 
-export default Contact
+export default Contact;
