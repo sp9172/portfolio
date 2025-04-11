@@ -62,8 +62,8 @@ const About = () => {
           {/* Right Content - Add an Image or Animation if needed */}
           <div className="md:w-1/2">
             <img
-              src="/your-image-path.jpg"
-              alt="Developer illustration"
+              src="./images/837.jpg"
+              alt="About me"
               className="w-full h-auto rounded-lg shadow-lg"
             />
           </div>

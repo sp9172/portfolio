@@ -37,7 +37,7 @@ const Projects = () => {
   return (
     <section
       id="projects"
-      className="w-full py-16 bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-white"
+      className="w-full py-16 bg-gradient-to-br from-fuchsia-600 via-cyan-500 to-blue-500  text-gray-900 dark:text-white"
     >
       <div className="container mx-auto max-w-6xl px-6">
       <h2 className="text-4xl sm:text-5xl md:text-6xl font-bold text-black underline decoration-cyan-300 underline-offset-8 mb-6">
