@@ -1,5 +1,7 @@
 import React from "react";
 
+import aboutimg from '../images/837.jpg'
+
 const About = () => {
   return (
     <section id="about" className="bg-white py-16">
@@ -42,12 +44,11 @@ const About = () => {
                 "HTML",
                 "CSS",
                 "JavaScript",
-                "React",
                 "Tailwind",
                 "Shopify Liquid",
-                "Redux Toolkit",
-                "Git",
-                "VS Code",
+                "React",
+                "Redux Toolkit", 
+                "Context API"
               ].map((skill, index) => (
                 <span
                   key={index}
@@ -62,7 +63,7 @@ const About = () => {
           {/* Right Content - Add an Image or Animation if needed */}
           <div className="md:w-1/2">
             <img
-              src="./images/837.jpg"
+              src={aboutimg}
               alt="About me"
               className="w-full h-auto rounded-lg shadow-lg"
             />
